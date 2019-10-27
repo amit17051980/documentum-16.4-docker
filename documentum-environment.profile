@@ -1,0 +1,8 @@
+export APP_SERVER_PASSWORD=password
+export INSTALL_OWNER_PASSWORD=password
+export ROOT_PASSWORD=password
+export DOCBASE_PASSWORD=password
+export DATABASE_PASSWORD=password
+export GLOBAL_REGISTRY_PASSWORD=password
+export AEK_PASSPHRASE=password
+export LOCKBOX_PASSPHRASE=password

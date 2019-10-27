@@ -1,0 +1,98 @@
+#For description of parameter please do refer to Readme.txt
+version: '3.3'
+services:
+  rcs:
+    image: contentserver_ubuntu:16.4.0000.0248
+    environment:
+      - DOCKER_HOST=192.168.0.44
+      - DATABASE_HOST=postgres
+      - DATABASE_USER=postgres
+      - DATABASE_PASSWORD=${DATABASE_PASSWORD}
+      - DATABASE_SERVER_PORT=5432
+      - ROOT_PASSWORD=${ROOT_PASSWORD}
+      - INSTALL_OWNER=dmadmin
+      - INSTALL_OWNER_PASSWORD=${INSTALL_OWNER_PASSWORD}
+      - DOCBASE_NAME=centdb
+      - GLOBAL_REGISTRY_PASSWORD=${GLOBAL_REGISTRY_PASSWORD}
+      - AEK_ALGORITHM=AES_256_CBC
+      - AEK_PASSPHRASE=${AEK_PASSPHRASE}
+      - AEK_NAME=CSaek
+      - ENABLE_LOCKBOX=false
+      - LOCKBOX_FILE_NAME=lockbox.lb
+      - LOCKBOX_PASSPHRASE=${LOCKBOX_PASSPHRASE}
+      - CONFIGURE_THUMBNAIL_SERVER=NO
+      - THUMBNAIL_SERVER_PORT=8081
+      - THUMBNAIL_SERVER_SSL_PORT=8443
+      - EXTERNAL_DOCBROKER_PORT=1689
+      - CONTENTSERVER_PORT=50000
+      - APP_SERVER_PASSWORD=${APP_SERVER_PASSWORD}
+      - INSTALL_OWNER_UID=1000
+      - HIGH_VOLUME_SERVER_LICENSE=
+      - TRUSTED_LICENSE=
+      - STORAGEAWARE_LICENSE=
+      - XMLSTORE_LICENSE=
+      - SNAPLOCKSTORE_LICENSE=
+      - RPS_LICENSE=
+      - FED_RECD_SERVICE_LICENSE=
+      - RECORD_MANAGER_LICENSE=
+      - PRM_LICENSE=
+      - DOCBASE_PASSWORD=${DOCBASE_PASSWORD}
+      - INSTALLER_UI=silent
+      - KEEP_TEMP_FILE=false
+      - INSTALLER_DEBUG_LOG=true
+      - DOCBASE_ID=453216
+      - USE_EXISTING_DATABASE_ACCOUNT=
+      - INDEXSPACE_NAME=DM_XCHIVE_DOCBASE
+      - USE_EXISTING_AEK_LOCKBOX=false
+    hostname:
+      "centdb"
+    container_name:
+      "centdb"
+    ports:
+      - "1489:1489"
+      - "1490:1490"
+      - "1689:1689"
+      - "1690:1690"
+      - "50000:50000"
+      - "50001:50001"
+      - "9080:9080"
+      - "9082:9082"
+      - "9081:9081"
+      - "9084:9084"
+      - "9085:9085"
+      - "8081:8081"
+      - "8443:8443"
+    networks:
+      - documentum
+    volumes:
+      - centdb_odbc:/opt/dctm/odbc
+      - centdb_data:/opt/dctm/data
+      - centdb_dba:/opt/dctm/dba
+      - centdb_share:/opt/dctm/share
+      - centdb_dfc:/opt/dctm/config
+      - centdb_mdserver_conf:/opt/dctm/mdserver_conf
+      - centdb_mdserver_log:/opt/dctm/wildfly9.0.1/server/DctmServer_MethodServer/log
+      - centdb_mdserver_logs:/opt/dctm/wildfly9.0.1/server/DctmServer_MethodServer/logs
+      - centdb_Thumbnail_Server_conf:/opt/dctm/product/16.4/thumbsrv/conf
+      - centdb_Thumbnail_Server_webinf:/opt/dctm/product/16.4/thumbsrv/container/webapps/thumbsrv/WEB-INF
+      - centdb_xhive_storage:/opt/dctm/xhive_storage
+      - centdb_XhiveConnector:/opt/dctm/wildfly9.0.1/server/DctmServer_MethodServer/deployments/XhiveConnector.ear
+    privileged: true
+#'volumes' service definition: 
+volumes:
+ centdb_data:
+ centdb_share:
+ centdb_dba:
+ centdb_dfc:
+ centdb_odbc:
+ centdb_mdserver_conf:
+ centdb_mdserver_log:
+ centdb_mdserver_logs:
+ centdb_Thumbnail_Server_conf:
+ centdb_Thumbnail_Server_webinf:
+ centdb_XhiveConnector:
+ centdb_xhive_storage:
+
+networks:
+ documentum:
+  external: true

@@ -59,7 +59,44 @@ This is being assumed that the repository name is *centdb* here. If you want to
 create repository with another name, feel free to replace all (includes \*.yml
 and other instructions in this repo)!
 
+*Run Postgres Container*
+
+`docker exec -it postgres su -c "mkdir
+/var/lib/postgresql/data/db_centdb_dat.dat" postgres`
+
+*Test Connectivity*
+
+`docker run --rm --network documentum mikesplain/telnet postgres 5432`
+
+### Prepare Content Server and Repository
+
+If you have not yet cloned this project, no issues! But open the files mentioned
+below directly and copy paste the content to your local files (do name the files
+as found).
+
+*DB Table Space*
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 docker exec -it postgres su -c "mkdir /var/lib/postgresql/data/db_centdb_dat.dat" postgres
-docker run --rm --network documentum mikesplain/telnet postgres 5432
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+*Content Server and Repository*
+
+Place the tar file (downloaded from OpenText), yml and profile file in you
+working directory. The sample *yml* and *profile* files are attached!
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+tar -xvf contentserver_docker_ubuntu.tar
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+docker load -i Contentserver_Ubuntu.tar
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+source documentum-environment.profile
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+docker-compose -f CS-Docker-Compose_Stateless.yml up -d
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
