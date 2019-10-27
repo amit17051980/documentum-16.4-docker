@@ -80,7 +80,7 @@ as found).
 docker exec -it postgres su -c "mkdir /var/lib/postgresql/data/db_centdb_dat.dat" postgres
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-*Content Server and Repository*
+*Content Server and Repository (go and watch the movie for 30 minutes after this step!)*
 
 Place the tar file (downloaded from OpenText), yml and profile file in you
 working directory. The sample *yml* and *profile* files are attached!
@@ -90,4 +90,5 @@ tar -xvf contentserver_docker_ubuntu.tar
 docker load -i Contentserver_Ubuntu.tar
 source documentum-environment.profile
 docker-compose -f CS-Docker-Compose_Stateless.yml up -d
+docker logs -f centdb
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
