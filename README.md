@@ -28,6 +28,7 @@ know how to setup this, please use your local instructions and ignore this step!
 We mindful to use latest composer version that supports version 3.0 compose
 file.
 
+```bash
 sudo yum install curl
 
 curl -fsSL <https://get.docker.com> -o get-docker.sh
@@ -45,16 +46,21 @@ sudo curl -L
 -o /usr/local/bin/docker-compose
 
 sudo chmod +x /usr/local/bin/docker-compose
+```
 
 ### Create Documentum Bridge Network
 
 This step is required for inter-docker communications. If you do not follow this
 step, the database will not be reachable to Documentum Content Server.
 
+```bash
 docker network create documentum
+```
 
 ### Setup Postgres DB (not the latest!)
 
+```bash
 docker run --rm --network documentum --name postgres --hostname postgres -e
 POSTGRES_PASSWORD=password -d -p 5432:5432 -v
 \$HOME/docker/volumes/postgres:/var/lib/postgresql/data postgres:9.6
+```
