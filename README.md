@@ -110,4 +110,4 @@ docker cp da.war tomcat:/usr/local/tomcat/webapps
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ### Test the Documentum Administrator
-<http://<CentOS-IP>:8080/da>
+<http://{CentOS-IP}:8080/da>
