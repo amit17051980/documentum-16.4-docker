@@ -50,7 +50,5 @@ docker network create documentum
 ### Setup Postgres DB (not the latest!)
 
 ```bash
-docker run --rm --network documentum --name postgres --hostname postgres -e
-POSTGRES_PASSWORD=password -d -p 5432:5432 -v
-\$HOME/docker/volumes/postgres:/var/lib/postgresql/data postgres:9.6
+docker run --rm --network documentum --name postgres --hostname postgres -e POSTGRES_PASSWORD=password -d -p 5432:5432 -v \$HOME/docker/volumes/postgres:/var/lib/postgresql/data postgres:9.6
 ```
