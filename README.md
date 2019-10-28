@@ -63,10 +63,9 @@ and other instructions in this repo)!
 
 *Create Tablespace on Postgres Container*
 
-`docker exec -it postgres su -c "mkdir
-/var/lib/postgresql/data/db_centdb_dat.dat" postgres`
+`docker exec -it postgres su -c "mkdir /var/lib/postgresql/data/db_centdb_dat.dat" postgres`
 
-*Test Connectivity*
+*Test Connectivity on documentum bridge network*
 
 `docker run --rm --network documentum mikesplain/telnet postgres 5432`
 
@@ -76,16 +75,7 @@ If you have not yet cloned this project, no issues! But open the files mentioned
 below directly and copy paste the content to your local files (do name the files
 as found).
 
-*DB Table Space*
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-docker exec -it postgres su -c "mkdir /var/lib/postgresql/data/db_centdb_dat.dat" postgres
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-*Content Server and Repository (go and watch the movie for 30 minutes after this
-step!)*
-
-Place the tar file (downloaded from OpenText), yml and profile file in you
+Place the tar file (downloaded from OpenText), yml and profile files in your
 working directory. The sample *yml* and *profile* files are attached!
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -95,6 +85,8 @@ source documentum-environment.profile
 docker-compose -f CS-Docker-Compose_Stateless.yml up -d
 docker logs -f centdb
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Give at least 30 minutes to finish this. Follow the next steps once you feel all went ok.
 
 ### Install Tomcat and Documentum Administrator
 
