@@ -105,3 +105,10 @@ docker cp da.war tomcat:/usr/local/tomcat/webapps
 
 ### Test the Documentum Administrator
 <http://{CentOS-IP}:8080/da>
+
+Next Steps
+----------
+
+If you are planning to setup xCP 16.4 environment, follow and download all mentioned files in the document below.
+
+https://github.com/amit17051980/documentum-16.4-docker/blob/master/README_xCP_Setup.pdf
