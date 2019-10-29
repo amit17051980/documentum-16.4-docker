@@ -9,7 +9,7 @@ Prerequisites:
 
 | Title                           | Description                                                                                                                            |
 |---------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|
-| CentOS Image                    | 7 or 8                                                                                                                                 |
+| CentOS Image (HOST)                   | 7 or 8                                                                                                                                 |
 | contentserver_docker_ubuntu.tar | <https://mimage.opentext.com/support/ecm/secure/software/dell/documentum/documentumcontentserver/16.4/contentserver_docker_ubuntu.tar> |
 | DA                     | <https://mimage.opentext.com/support/ecm/secure/software/dell/documentum/documentumadministrator/16.4/da.war>                                                                                                                                        |
 | Minimum RAM                     | 8 GB                                                                                                                                   |
