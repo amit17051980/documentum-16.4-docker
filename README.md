@@ -11,7 +11,7 @@ Prerequisites:
 |---------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|
 | CentOS Image                    | 7 or 8                                                                                                                                 |
 | contentserver_docker_ubuntu.tar | <https://mimage.opentext.com/support/ecm/secure/software/dell/documentum/documentumcontentserver/16.4/contentserver_docker_ubuntu.tar> |
-| DA                     | https://knowledge.opentext.com/knowledge/llisapi.dll?func=ll&objid=72195506&objaction=location&nexturl=%2Fknowledge%2Fllisapi%2Edll%3Ffunc%3Dll%26objId%3D72079524%26objAction%3Dbrowse%26viewType%3D1                                                                                                                                   |
+| DA                     | <https://www.opentext.com/securedl?cams_original_url=https%3a%2f%2fmimage.opentext.com%2fsupport%2fecm%2fsecure%2fsoftware%2fdell%2fdocumentum%2fdocumentumadministrator%2f16.4%2fda.war>                                                                                                                                                             |
 | Minimum RAM                     | 8 GB                                                                                                                                   |
 | Minimum Storage                 | 40 GB                                                                                                                                  |
 
