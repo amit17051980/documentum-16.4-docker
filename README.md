@@ -53,7 +53,7 @@ docker network create documentum
 *Run Postgres Container*
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-docker run --rm --network documentum --name postgres --hostname postgres -e POSTGRES_PASSWORD=password -d -p 5432:5432 -v \$HOME/docker/volumes/postgres:/var/lib/postgresql/data postgres:9.6
+docker run --network documentum --name postgres --hostname postgres -e POSTGRES_PASSWORD=password -d -p 5432:5432 postgres:9.6
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ### Prepare DB for Documentum Repository
@@ -96,7 +96,7 @@ the recompressed Documentum Administrator WAR file with the right
 dfc.properties. Sample dfc.properties is attached!
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-docker run --rm --network documentum -d --name tomcat --hostname tomcat -p 8080:8080 tomcat
+docker run --network documentum -d --name tomcat --hostname tomcat -p 8080:8080 tomcat
 sleep 5s
 docker cp web.xml tomcat:/usr/local/tomcat/conf/web.xml
 docker restart tomcat
