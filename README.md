@@ -1,5 +1,5 @@
-Documentum 16.4 Docker (Postgres) with Documentum Administrator
-===============================================================
+Documentum 16.4 Docker (Postgres) with Documentum Administrator and DCTM REST
+=============================================================================
 
 Setup Instructions for Documentum Content Server with Documentum Administrator
 on CentOS environment.
@@ -12,6 +12,7 @@ Prerequisites:
 | CentOS Image (HOST)                   | 7 or 8                                                                                                                                 |
 | contentserver_docker_ubuntu.tar | <https://mimage.opentext.com/support/ecm/secure/software/dell/documentum/documentumcontentserver/16.4/contentserver_docker_ubuntu.tar> |
 | DA                     | <https://mimage.opentext.com/support/ecm/secure/software/dell/documentum/documentumadministrator/16.4/da.war>                                                                                                                                        |
+| DCTM REST                     | <https://mimage.opentext.com/support/ecm/secure/software/dell/documentum/documentumrestservices/16.4/dctm-rest.war>                                                                                                                                        |
 | Minimum RAM                     | 8 GB                                                                                                                                   |
 | Minimum Storage                 | 40 GB                                                                                                                                  |
 
@@ -89,11 +90,11 @@ docker logs -f centdb
 
 Give at least 30 minutes to finish this. Follow the next steps once you feel all went ok.
 
-### Install Tomcat and Documentum Administrator
+### Install Tomcat and Documentum Administrator with DCTM REST
 
-The sample web.xml with disabled tag pooling has been attached. The da.war is
-the recompressed Documentum Administrator WAR file with the right
-dfc.properties. Sample dfc.properties is attached!
+The sample web.xml with disabled tag pooling has been attached. The da.war and dctm-rest.war are
+the recompressed WAR files with the right dfc.properties. 
+Sample dfc.properties is attached!
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 docker run --network documentum -d --name tomcat --hostname tomcat -p 8080:8080 tomcat
@@ -102,6 +103,7 @@ docker cp web.xml tomcat:/usr/local/tomcat/conf/web.xml
 docker restart tomcat
 sleep 5s
 docker cp da.war tomcat:/usr/local/tomcat/webapps
+docker cp dctm-rest.war tomcat:/usr/local/tomcat/webapps
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ### Test the Documentum Administrator
