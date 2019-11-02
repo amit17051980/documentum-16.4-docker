@@ -108,6 +108,7 @@ docker cp dctm-rest.war tomcat:/usr/local/tomcat/webapps
 
 ### Test the Documentum Administrator and DCTM REST
 <http://{CentOS-IP}:8080/da>
+
 <http://{CentOS-IP}:8080/dctm-rest>
 
 Next Steps
