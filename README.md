@@ -114,6 +114,6 @@ docker cp dctm-rest.war tomcat:/usr/local/tomcat/webapps
 Next Steps
 ----------
 
-If you are planning to setup xCP 16.4 environment, follow and download all mentioned files in the document below.
+If you are planning to setup xCP 16.4 environment, follow and download all mentioned files in the document below or simply follow some sections in https://github.com/amit17051980/DCTM-xCP-16.4.0/wiki.
 
 https://github.com/amit17051980/documentum-16.4-docker/blob/master/README_xCP_Setup.pdf
